@@ -10,16 +10,9 @@ namespace Domain.Entity
     {
         public int classe;
         public float capacidade;
-        public char tipoMineral;
         public string status;
-    
-        public Cargueiro(int classe, float capacidade, char tipoMineral, string status)
-        {
-            this.classe = classe;
-            this.capacidade = capacidade;
-            this.tipoMineral = tipoMineral;
-            this.status = status;   
-        }
+        public Minerio minerio;
+
     }
 
 
