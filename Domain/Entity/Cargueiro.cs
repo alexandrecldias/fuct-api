@@ -8,10 +8,11 @@ namespace Domain.Entity
 {
     public class Cargueiro : EntityBase
     {
-        public int classe;
-        public float capacidade;
-        public string status;
-        public Minerio minerio;
+        public int classe { get; set; }
+        public float capacidade { get; set; }
+        public string status { get; set; }
+        public virtual Minerio Minerio { get; set; }
+        public int IdMinerio { get; set; }
 
     }
 

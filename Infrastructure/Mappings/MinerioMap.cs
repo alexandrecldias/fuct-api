@@ -45,6 +45,9 @@ namespace Infrastructure.Mappings
                 .HasColumnName("LgUsuario")
                 .IsRequired(true);
 
+            builder.HasOne(p => p.Cargueiro).WithOne(c => c.Minerio).HasForeignKey<Cargueiro>(c => c.IdMinerio);
+
+
         }
     }
 }

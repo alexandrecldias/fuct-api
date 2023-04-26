@@ -21,6 +21,8 @@ namespace Application.DI
             services.AddDbContext<ServiceContext>(opts => opts.UseMySQL(conection));
             services.AddScoped<IMinerioRepository, MinerioRepository>();
             services.AddScoped<IMinerioService, MinerioService>();
+            services.AddScoped<ICargueiroRepository, CargueiroRepository>();
+            services.AddScoped<ICargueiroService, CargueiroService>();
             services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
 
         }

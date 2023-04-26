@@ -9,9 +9,10 @@ namespace Domain.Entity
 {
     public class Minerio : EntityBase
     {
-        public char tipoMineral;
-        public string caracteristica;
-        public decimal preco;
-        public int peso;
+        public char tipoMineral { get; set; }
+        public string caracteristica { get; set; }
+        public decimal preco { get; set; }
+        public int peso { get; set; }
+        public virtual Cargueiro Cargueiro { get; set; }
     }
 }

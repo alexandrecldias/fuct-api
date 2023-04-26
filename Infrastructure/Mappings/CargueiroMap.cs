@@ -20,6 +20,24 @@ namespace Infrastructure.Mappings
             builder.Property(p => p.Id)
                 .HasColumnName("id")
                 .IsRequired(true);
+
+            builder.Property(p => p.classe)
+                .HasColumnName("classe")
+                .IsRequired(true);
+
+            builder.Property(p => p.capacidade)
+                 .HasColumnName("capacidade")
+                 .IsRequired(true);
+
+            builder.Property(p => p.status)
+                 .HasColumnName("status")
+                 .IsRequired(true);
+
+            builder.Property(p => p.IdMinerio)
+                 .HasColumnName("IdMinerio")
+                 .IsRequired(true);
+
+            builder.HasOne(p => p.Minerio).WithOne(c => c.Cargueiro).HasForeignKey<Minerio>(c => c.Id);
         }
     }
 }
