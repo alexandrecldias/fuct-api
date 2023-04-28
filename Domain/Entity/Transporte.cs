@@ -8,12 +8,12 @@ namespace Domain.Entity
 {
     public class Transporte : EntityBase
     {
-        Cargueiro cargueiro;
-        DateTime dataHoraSaida;
-        DateTime dataHoraRetorno;
-        int quantidadeMinerais;
-        decimal valorCarga;
-        Minerio minerio;
+        public DateTime dataHoraSaida { get; set; }
+        public DateTime dataHoraRetorno { get; set; }
+        public float quantidadeMinerais { get; set; }
+        public decimal valorCarga { get; set; }
+        public char tipoMinerio { get; set; }
+        public Cargueiro cargueiro { get; set; }
 
     }
 }

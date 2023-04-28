@@ -19,7 +19,7 @@ namespace fuctlogistica.API.Controllers
         [HttpGet(Name = "GetListaCargueiro")]
         public IActionResult Get()
         {
-            var listaDeCargueiros = _cargueiroService.ObterCargueiroPorId(1);
+            var listaDeCargueiros = _cargueiroService.ObterTodos();
 
             return Ok(JsonConvert.SerializeObject(listaDeCargueiros));
 
