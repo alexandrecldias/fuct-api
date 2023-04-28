@@ -13,7 +13,8 @@ namespace Domain.Entity
         public float quantidadeMinerais { get; set; }
         public decimal valorCarga { get; set; }
         public char tipoMinerio { get; set; }
-        public Cargueiro cargueiro { get; set; }
+        public virtual Cargueiro Cargueiro { get; set; }
+        public int idCargueiro { get; set; }
 
     }
 }

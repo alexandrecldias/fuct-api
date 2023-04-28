@@ -5,6 +5,7 @@ using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -20,5 +21,16 @@ namespace Infrastructure.Repository
         {
             return DbSet.Include(x => x.Minerio).AsQueryable().AsNoTracking().FirstOrDefault(y => y.Id == idCargueiro);
         }
+
+        public List<Cargueiro> BuscarCargueirosDisponiveis()
+        {
+            return DbSet.Where(x => x.status == Domain.Enum.EnumStatusCargueiro.Aguardando).Include(x => x.Minerio).AsQueryable().AsNoTracking().ToList();
+        }
+
+        public List<Cargueiro> BuscarCargueirosDisponiveis(int classe)
+        {
+            return DbSet.Where(x => x.status == Domain.Enum.EnumStatusCargueiro.Aguardando && x.classe == classe).Include(x => x.Minerio).AsQueryable().AsNoTracking().ToList();
+        }
+
     }
 }

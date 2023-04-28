@@ -14,7 +14,7 @@ namespace Domain.Service
     public class CargueiroService : ICargueiroService
     {
         private readonly ICargueiroRepository _cargueiroRepository;
-        public readonly IMapper _mapper;
+        private readonly IMapper _mapper;
 
         public CargueiroService(ICargueiroRepository cargueiroRepository, IMapper mapper)
         {

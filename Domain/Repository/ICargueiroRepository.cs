@@ -11,5 +11,7 @@ namespace Domain.Repository
     {
 
         Cargueiro BuscarCargueirosComMinerioAssociado(int idCargueiro);
+        List<Cargueiro> BuscarCargueirosDisponiveis();
+        List<Cargueiro> BuscarCargueirosDisponiveis(int classe);
     }
 }

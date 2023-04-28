@@ -38,6 +38,9 @@ namespace Infrastructure.Mappings
                  .IsRequired(true);
 
             builder.HasOne(p => p.Minerio).WithOne(c => c.Cargueiro).HasForeignKey<Minerio>(c => c.Id);
+
+            builder.HasOne(p => p.Transporte).WithOne(c => c.Cargueiro).HasForeignKey<Transporte>(c => c.idCargueiro);
+
         }
     }
 }

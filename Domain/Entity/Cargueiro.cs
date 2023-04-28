@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Domain.Enum;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -10,9 +11,10 @@ namespace Domain.Entity
     {
         public int classe { get; set; }
         public float capacidade { get; set; }
-        public string status { get; set; }
+        public EnumStatusCargueiro status { get; set; }
         public virtual Minerio Minerio { get; set; }
         public int IdMinerio { get; set; }
+        public virtual Transporte Transporte { get; set; }
 
     }
 
