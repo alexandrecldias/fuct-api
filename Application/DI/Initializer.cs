@@ -23,6 +23,8 @@ namespace Application.DI
             services.AddScoped<IMinerioService, MinerioService>();
             services.AddScoped<ICargueiroRepository, CargueiroRepository>();
             services.AddScoped<ICargueiroService, CargueiroService>();
+            services.AddScoped<ITransporteService, TransporteService>();
+            services.AddScoped<ITransporteRepository, TransporteRespository>();
             services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
 
         }

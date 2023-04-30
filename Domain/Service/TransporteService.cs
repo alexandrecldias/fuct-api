@@ -5,6 +5,7 @@ using Domain.Service.Interface;
 using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.Linq;
 using System.Net.Http.Json;
 using System.Text;
@@ -27,13 +28,20 @@ namespace Domain.Service
 
         public void adicionarNovoTransporte(FiltroTransporteDto filtroTransporteDto)
         {
+
+            int semana = CultureInfo.CurrentCulture.Calendar.GetWeekOfYear(filtroTransporteDto.dataHoraRetorno, CalendarWeekRule.FirstFourDayWeek, DayOfWeek.Sunday);
+
+
             var cargueirosDisponiveis = _cargueiroRepository.BuscarCargueirosDisponiveis(filtroTransporteDto.classe);
 
             foreach (var cargueiro in cargueirosDisponiveis)
             {
-                cargueiro.status = Enum.EnumStatusCargueiro.EmTransporte;
+                cargueiro.status = Enum.EnumStatusCargueiro.EmTransporte.ToString();
                 _cargueiroRepository.Update(cargueiro);
 
+                //var resultado = obterMinerioDisponivelTask().GetAwaiter().GetResult();
+
+                var retornoMineriosDisponiveis = verificarMineriosDisponiveis(filtroTransporteDto.dataHoraRetorno.Month, filtroTransporteDto.dataHoraRetorno.Year, semana).GetAwaiter().GetResult();
 
 
             }

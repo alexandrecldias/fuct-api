@@ -20,6 +20,8 @@ namespace Infrastructure.Context
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             modelBuilder.ApplyConfiguration(new MinerioMap());
+            modelBuilder.ApplyConfiguration(new CargueiroMap());
+            modelBuilder.ApplyConfiguration(new TransporteMap());
         }
 
         public override int SaveChanges(bool acceptAllChangesOnSuccess)

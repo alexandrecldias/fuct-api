@@ -24,12 +24,12 @@ namespace Infrastructure.Repository
 
         public List<Cargueiro> BuscarCargueirosDisponiveis()
         {
-            return DbSet.Where(x => x.status == Domain.Enum.EnumStatusCargueiro.Aguardando).Include(x => x.Minerio).AsQueryable().AsNoTracking().ToList();
+            return DbSet.Where(x => x.status == Domain.Enum.EnumStatusCargueiro.Aguardando.ToString()).Include(x => x.Minerio).AsQueryable().AsNoTracking().ToList();
         }
 
         public List<Cargueiro> BuscarCargueirosDisponiveis(int classe)
         {
-            return DbSet.Where(x => x.status == Domain.Enum.EnumStatusCargueiro.Aguardando && x.classe == classe).Include(x => x.Minerio).AsQueryable().AsNoTracking().ToList();
+            return DbSet.Where(x => x.status == Domain.Enum.EnumStatusCargueiro.Aguardando.ToString() && x.classe == classe).Include(x => x.Minerio).AsQueryable().AsNoTracking().ToList();
         }
 
     }
